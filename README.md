@@ -1,1 +1,1 @@
-# patrieszka
+# Fruit and vegetable classifier
