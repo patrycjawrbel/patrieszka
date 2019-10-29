@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Predict app </title>
+	<style>
+		* {
+			font-size:30px;
+		}
+	</style>	
+</head>	
+<body>
+	<input id="image-selector" type="file">
+	<button id="predict-button"> Predict</button>
+
+	<p style="font-weight:bold">Predictions</p>
+	<p> Jablko <span id="apple-prediction"></span></p>
+	<p> Banan <span id="banana-prediction"></span></p>
+	<p> Marchewka <span id="carrot-prediction"></span></p>
+	<p> Ogorek <span id="cucumber-prediction"></span></p>
+	<p> Cytryna <span id="lemon-prediction"></span></p>
+	<p> Pomarancza <span id="orange-prediction"></span></p>
+	<p> Gruszka <span id="pear-prediction"></span></p>
+	<p> Papryka <span id="peper-prediction"></span></p>
+	<p> Ziemniak <span id="potato-prediction"></span></p>
+	<p> Pomidor <span id="tomato-prediction"></span></p>
+	<img id="selected-image" src=""/>
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+        let base64Image;
+        $("#image-selector").change(function(){
+        let reader = new FileReader();
+        reader.onload = function(e){
+            let dataURL = reader.result;
+            $('#selected-image').attr("src", dataURL);
+            base64Image = dataURL.replace("data:image/png;base64,", "");
+            console.log(base64Image);
+            }
+            reader.readAsDataURL($("#image-selector")[0].files[0]);
+            $("#apple-prediction").text("");
+            $("#banana-prediction").text("");
+            $("#carrot-prediction").text("");
+            $("#cucumber-prediction").text("");
+            $("#lemon-prediction").text("");
+            $("#orange-prediction").text("");
+            $("#pear-prediction").text("");
+            $("#peper-prediction").text("");
+            $("#potato-prediction").text("");
+            $("#tomato-prediction").text("");
+            });
+
+            $("#predict-button").click(function(event){
+			let message = {
+			image:base64Image
+			}
+                    $.post("192.168.8.105:5000/predict",  function(response){
+                    $("#apple-prediction").text(prediction[0][0].toFixed(6));
+                    $("#banana-prediction").text(prediction[0][1].toFixed(6));
+                    $("#carrot-prediction").text(prediction[0][2].toFixed(6));
+                    $("#cucumber-prediction").text(prediction[0][3].toFixed(6));
+                    $("#lemon-prediction").text(prediction[0][4].toFixed(6));
+                    $("#orange-prediction").text(prediction[0][5].toFixed(6));
+                    $("#pear-prediction").text(prediction[0][6].toFixed(6));
+                    $("#peper-prediction").text(prediction[0][7].toFixed(6));
+                    $("#potato-prediction").text(prediction[0][8].toFixed(6));
+                    $("#tomato-prediction").text(prediction[0][9].toFixed(6));
+                    console.log(response);
+                    });
+                    });
+	</script>
+</body>
+</html>
