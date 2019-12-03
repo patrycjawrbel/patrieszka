@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Warzywaniak</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="static/js/camera.js?newversion"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="static/css/camera.css">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'images/favicon.ico')}}">
+    
+</head>
+
+<body>
+    <div class="container-main">
+        <div class="container-header">
+            <header class="header">
+                <a class="link-title" href="/">Zgadnij co to!</a>
+            </header>
+        </div>
+        <div id="camera">
+            <video id="video-display" autoplay="true">
+                Nie ma możliwości szrobienia zdjęcia
+            </video>
+            <div id="photo-button-div">
+                <button id="photo-button">Zrób zdjęcie</button>
+            </div>
+            <canvas id="canvas-photo"></canvas>
+            <div id="predict-button-div"></div>
+        </div>
+    </div>
+</body>
+</html>

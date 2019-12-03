@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (navigator.getUserMedia) {
         navigator.getUserMedia({
             video: true,
-            audio:false
+            audio: false
         }, handleVideo, videoError);
     }
 
@@ -33,11 +33,21 @@ document.addEventListener("DOMContentLoaded", function () {
         context.drawImage(video, 0, 0, 300, 150);
         context.imageSmoothingEnabled = true;
         let html = ` 
-<form id ="button-results-form " action="/list.html" method="get" id ="predict-button-form"><button id="predict-button" type="submit" value="Rozpoznaj">Rozpoznaj</button></form>`;
+<form id ="button-results-form " action="/list.html" method="get" id ="predict-button-form"><button id="predict-button" type="submit" value="Rozpoznaj" hidden="hidden">Rozpoznaj</button></form>`;
         document.querySelector('#predict-button-div').innerHTML = html;
+        const predict_button = document.getElementById('predict-button');
+        predict_button.addEventListener("click", function () {
+            let image = context.getImageData(0, 0, 300, 150);
+            let date = new Date().toLocaleString();
+            console.log(image.data);
+            console.log(date);
+        })
+        //let image = context.getImageData( 0, 0, 300, 150);
         //var image = document.getElementById("snapToSave");
         //image.src = canvas.toDataURL("image/png");
         //document.getElementById("snapURL").value = canvas.toDataURL("image/png");
         //console.log(image.src);
     })
+
+
 })
