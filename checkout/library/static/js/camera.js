@@ -41,14 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
         let date = new Date().toLocaleString();
                 predict_button.addEventListener("click", function () {
             $.ajax({
-    url         : "/predict",
+    url         : "/",
     method      : "post",
     contentType : 'application/json',
     dataType    : 'html',
-    data        : {
-        imageData : canvas.toDataURL('image/jpeg'),
-        name : 'date'
-    }
+    data        : JSON.stringify({ "imageData": canvas.toDataURL('image/jpeg'), "name" : date })
 });
         })
     })

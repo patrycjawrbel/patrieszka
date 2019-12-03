@@ -15,6 +15,7 @@ import re
 import uuid
 
 current_path = os.path.dirname(os.path.abspath(__file__))
+print (f"current path: {current_path}")
 class BadRequestException(Exception):
     pass
 
@@ -61,14 +62,13 @@ def get_image_from_request(request):
         raise BadRequestException('Nie wysłano żadnego pliku')
 
 
-@app.route("/predict", methods=["POST"])
+@app.route("/", methods=["POST"])
 def predict():
     try:
         image = get_image_from_request(request)
         # Zapisanie przesłanego pliku
         image.save(paths_to_photos + '\\' + str(uuid.uuid4()) + '.jpg')
         processed_image = preprocess_image(image, target_size=(224, 224))
-
         prediction = None
         with graph.as_default():
             set_session(session)
@@ -79,7 +79,7 @@ def predict():
                 fruits[i]["prediction"]=prediction[0][i]
                 #sortowanie listy predykcji
             fruits.sort(key=operator.itemgetter('prediction'))
-        return render_template("list.html", fruits)
+        return render_template("list.html", predictions=fruits)
 
     except BadRequestException as error:
         abort(400, str(error))
@@ -88,6 +88,7 @@ def predict():
         abort(500, str('Coś poszło nie tak po stronie serwera'))
 
 def init_models():
+    #załadowanie argumentów wiesza poleceń
     parser = argparse.ArgumentParser(description = "")
     parser.add_argument("-host", '--host', help = "Host aplikacji - domyślny to 'localhost'", required = False, default = 'localhost')
     parser.add_argument("-port", '--port', help = "Port for web app", required = False, default = 5000)
@@ -102,17 +103,18 @@ def init_models():
     global model, graph, vgg16, session
     session = tf.Session()
     set_session(session)
-    models_path = argument.paths_to_models
-    model = tf.keras.models.load_model(models_path + '\\fc_model1.h5')
-    model.load_weights(models_path + '\\model_grocery.h5')
+   # models_path = argument.paths_to_models
+    model = tf.keras.models.load_model('models/fc_model1.h5')
+    model.load_weights('models/model_grocery.h5')
     vgg16 = keras.applications.VGG16(include_top=False, weights='imagenet')
     graph = tf.get_default_graph()
+    print("**MODEL LOADED")
 
     # Utworzenie folderu na przychodzace zdjecia jesli nie istnieje
     global paths_to_photos
     paths_to_photos = argument.paths_to_photos
     if not os.path.exists(paths_to_photos):
         os.mkdir(paths_to_photos)
-
+    return host, port
 
 

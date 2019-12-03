@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cf1470f-8f58-4348-af3d-906107d88972" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fc_model1.h5" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/library/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/static/js/camera.js" beforeDir="false" afterPath="$PROJECT_DIR$/library/static/js/camera.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_grocery.h5" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../page/camera.html" beforeDir="false" afterPath="$PROJECT_DIR$/../page/camera.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../page/images/apple.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../page/images/raspberries7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../page/js/camera.js" beforeDir="false" afterPath="$PROJECT_DIR$/../page/js/camera.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../page/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../page/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../page/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/../page/results.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +50,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_app.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="--host localhost --port 5000 --paths_to_models /models --paths_to_photos /received_images" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
