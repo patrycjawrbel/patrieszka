@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const context = canvas.getContext('2d');
     const photo_button = document.getElementById('photo-button');
 
-
-
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia ||
         navigator.msGetUserMedia || navigator.oGetUserMedia;
 

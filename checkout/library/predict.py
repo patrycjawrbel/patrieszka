@@ -45,8 +45,18 @@ def preprocess_image(image, target_size):
     image /= 255.
     return image
 
+def stringProcess(oldValue):
+    for elem in oldValue:
+        if(elem == '.' or elem ==':' or elem ==' ' or elem ==','):
+           oldValue = oldValue.replace(elem, '_')
+    newString = oldValue + ".jpg"
+    return newString
+
 def get_image_from_request(request):
     message = request.get_json(force=True)
+    imageName = message.get('name', None)
+    imageName = stringProcess(imageName)
+    print(imageName)
     encoded = message.get('imageData', None)
     if encoded != None:
         encoded, replacements_count = re.subn('^data:image/.+;base64,', '', encoded)
@@ -57,30 +67,35 @@ def get_image_from_request(request):
             image = Image.open(io.BytesIO(decoded))
             if image.mode != "RGB":
                 image = image.convert("RGB")
-            return image
+            return image, imageName
     else:
         raise BadRequestException('Nie wysłano żadnego pliku')
 
+def processProductsList(products):
+    for i in range(len(fruits)):
+        fruits[i]["prediction"] = round(products[0][i]*100,2)
+        # sortowanie listy predykcji
+    fruits.sort(key=operator.itemgetter('prediction'), reverse=True)
+    for i in range(len(fruits)):
+        list = [fruits[i]['fruit'], fruits[i]['prediction']]
+        print("class: {}, prediction: {}%".format(*list))
+    return fruits
 
 @app.route("/", methods=["POST"])
 def predict():
     try:
-        image = get_image_from_request(request)
+        image, imageName = get_image_from_request(request)
         # Zapisanie przesłanego pliku
-        image.save(paths_to_photos + '\\' + str(uuid.uuid4()) + '.jpg')
+        path = 'C:/Users/Agnieszka/Desktop/patrieszka/checkout/images/' + imageName
+        image.save(path)
         processed_image = preprocess_image(image, target_size=(224, 224))
         prediction = None
         with graph.as_default():
             set_session(session)
             bt_prediction = vgg16.predict(processed_image)
             prediction = model.predict(bt_prediction).tolist()
-
-            for i in range(len(fruits)):
-                fruits[i]["prediction"]=prediction[0][i]
-                #sortowanie listy predykcji
-            fruits.sort(key=operator.itemgetter('prediction'))
+            fruits = processProductsList(prediction)
         return render_template("list.html", predictions=fruits)
-
     except BadRequestException as error:
         abort(400, str(error))
     except Exception as error:
