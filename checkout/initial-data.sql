@@ -1,0 +1,11 @@
+INSERT INTO classes (class_name) VALUES ('niewiadoma');
+INSERT INTO classes (class_name) VALUES ('jablko');
+INSERT INTO classes (class_name) VALUES ('banan');
+INSERT INTO classes (class_name) VALUES ('cytryna');
+INSERT INTO classes (class_name) VALUES ('pomarancza');
+INSERT INTO classes (class_name) VALUES ('gruszka');
+INSERT INTO classes (class_name) VALUES ('marchewka');
+INSERT INTO classes (class_name) VALUES ('ogorek');
+INSERT INTO classes (class_name) VALUES ('papryka');
+INSERT INTO classes (class_name) VALUES ('ziemniak');
+INSERT INTO classes (class_name) VALUES ('pomidor');

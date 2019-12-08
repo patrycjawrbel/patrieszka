@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Warzywniak</title>
+    <link rel="stylesheet" href="static/css/style_list.css">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'images/favicon.ico')}}">
+    <script src="static/js/camera.js?newversion"></script>
+</head>
+
+<body onload="load();">
+    <div class="container-main">
+        <div class="container-header">
+            <header class="header">
+                <a class="link-title" href="/">Zgadnij co to!</a>
+            </header>
+        </div>
+
+        <div class="container-list">
+            <h1>Czy to...?</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><img src="static/images/apple.png" alt="Apple-image"></td>
+                        <td>Jabłko</td>
+                        <td>
+                            <a href="/results.html" class="button">
+                                <button type="submit">Wybierz</button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="static/images/banana.png" alt="Banana-image"></td>
+                        <td>Banan</td>
+                        <td>
+                            <a href="/results.html" class="button">
+                                <button type="submit">Wybierz</button>
+                            </a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><img src="static/images/carrot.png" alt="Carrot-image"></td>
+                        <td>Marchewka</td>
+                        <td>
+                            <a href="/results.html" class="button">
+                                <button type="submit">Wybierz</button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="static/images/cucumber.png" alt="Cucumber-image"></td>
+                        <td>Ogórek</td>
+                        <td>
+                            <a href="/results.html" class="button">
+                                <button type="submit">Wybierz</button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="static/images/question_mark.png" alt="Apple-image"></td>
+                        <td>Żadne z powyższych</td>
+                        <td>
+                            <a href="/camera.html" class="button">
+                                <button type="submit">Wybierz</button>
+                            </a>
+                        </td>
+                    </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body></html>

@@ -23,6 +23,15 @@
     margin:0 auto;
     height: auto;
     text-align: center;
+    float:left;
+}
+#photo {
+    width: 50%;
+    margin:0 auto;
+    height: auto;
+    text-align: center;
+    float:right;
+   
 }
 
 #video-display{

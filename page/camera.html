@@ -1,12 +1,14 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>Warzywaniak</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/camera.js"></script>
+    <script src="js/camera.js?newversion"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="styles/camera.css">
-    <link rel="shortcut icon" href="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2F1502826406%2F1708w-getty-fruit-closeup-CarstenSchanter-EyeEm.jpg%3Fitok%3DXFE9vQPZ&w=400&c=sc&poi=face&q=85">
+    <link rel="shortcut icon" href="{{url_for('static', filename = 'images/favicon.ico')}}">
     
 </head>
 
@@ -19,14 +21,15 @@
         </div>
         <div id="camera">
             <video id="video-display" autoplay="true">
-                Nie ma możliwości szrobienia zdjęcia
+                Nie ma możliwości zrobienia zdjęcia
             </video>
             <div id="photo-button-div">
                 <button id="photo-button">Zrób zdjęcie</button>
-            </div>
-            <canvas id="canvas-photo"></canvas>
+            </div> 
+        </div>
+        <div id="photo">
+             <canvas id="canvas-photo"></canvas>
             <div id="predict-button-div"></div>
-
         </div>
 
     </div>
