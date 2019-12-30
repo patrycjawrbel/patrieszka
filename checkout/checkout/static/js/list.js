@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     select_button0.addEventListener("click", function () {
             $.ajax({
-    url         : "/ranking",
+    url         : "/saveLabel",
     method      : "post",
     contentType : 'application/json',
     dataType    : 'html',
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         select_button1.addEventListener("click", function () {
             $.ajax({
-    url         : "/ranking",
+    url         : "/saveLabel",
     method      : "post",
     contentType : 'application/json',
     dataType    : 'html',
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         select_button2.addEventListener("click", function () {
             $.ajax({
-    url         : "/ranking",
+    url         : "/saveLabel",
     method      : "post",
     contentType : 'application/json',
     dataType    : 'html',
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         select_button3.addEventListener("click", function () {
             $.ajax({
-    url         : "/ranking",
+    url         : "/saveLabel",
     method      : "post",
     contentType : 'application/json',
     dataType    : 'html',
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             select_button4.addEventListener("click", function () {
             $.ajax({
-    url         : "/ranking",
+    url         : "/saveLabel",
     method      : "post",
     contentType : 'application/json',
     dataType    : 'html',

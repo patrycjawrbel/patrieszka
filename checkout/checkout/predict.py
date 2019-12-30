@@ -49,9 +49,16 @@ def predict():
 def get_items():
     return render_template("list.html", var=fruits)
 
-#@app.route("/ranking")
-#def ranking():
+@app.route("/saveLabel", methods=['POST'])
+def ranking():
+    message = request.get_json(force=True)
+    labelName = message.get('fruitName', None)
+    #tutaj zapis do bazy!!!
+    return url_for("rank")
 
+@app.route("/ranking")
+def rank():
+    return render_template("results.html", fruits=fruits)
 
 
 def init_models():
