@@ -35,7 +35,7 @@ def predict():
             bt_prediction = vgg16.predict(processed_image)
             prediction = model.predict(bt_prediction).tolist()
             conn = connect_database()
-            #insert_pred(conn, prediction,path)
+            insert_pred(conn, prediction,path)
             fruits = process_products_list(prediction)
         return redirect(url_for('get_items'))
     except BadRequestException as error:

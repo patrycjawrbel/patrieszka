@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
 <button id="predict-button" type="submit" value="Rozpoznaj">Rozpoznaj</button>`;
         document.querySelector('#predict-button-div').innerHTML = html;
         const predict_button = document.getElementById('predict-button');
-        //let image = context.getImageData(0, 0, 300, 150);
         let image = canvas.toDataURL('image/jpeg');
         let date = new Date().toLocaleString();
                 predict_button.addEventListener("click", function () {
