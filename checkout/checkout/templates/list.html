@@ -6,10 +6,11 @@
     <title>Warzywniak</title>
     <link rel="stylesheet" href="static/css/style_list.css">
     <link rel="shortcut icon" href="{{url_for('static', filename = 'images/favicon.ico')}}">
-    <script src="static/js/camera.js?newversion"></script>
+    <script src="static/js/list.js?newversion"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 
-<body onload="load();">
+<body>
     <div class="container-main">
         <div class="container-header">
             <header class="header">
@@ -22,48 +23,48 @@
             <table>
                 <tbody>
                     <tr>
-                        <td><img src="static/images/apple.png" alt="Apple-image"></td>
-                        <td>Jabłko</td>
+                        <td><img src = {{var[0]['image']}} ></td>
+                        <td>{{var[0]['fruit']}}</td>
                         <td>
                             <a href="/results.html" class="button">
-                                <button type="submit">Wybierz</button>
+                                <button id = "select-button0" name = {{var[0]['fruit']}}>Wybierz</button>
                             </a>
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="static/images/banana.png" alt="Banana-image"></td>
-                        <td>Banan</td>
+                        <td><img src={{var[1]['image']}}></td>
+                        <td>{{var[1]['fruit']}}</td>
                         <td>
                             <a href="/results.html" class="button">
-                                <button type="submit">Wybierz</button>
+                                <button id = "select-button1" name = {{var[1]['fruit']}}>Wybierz</button>
                             </a>
                         </td>
 
                     </tr>
                     <tr>
-                        <td><img src="static/images/carrot.png" alt="Carrot-image"></td>
-                        <td>Marchewka</td>
+                        <td><img src={{var[2]['image']}}></td>
+                        <td>{{var[2]['fruit']}}</td>
                         <td>
                             <a href="/results.html" class="button">
-                                <button type="submit">Wybierz</button>
+                                <button id = "select-button2" name = {{var[2]['fruit']}}>Wybierz</button>
                             </a>
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="static/images/cucumber.png" alt="Cucumber-image"></td>
-                        <td>Ogórek</td>
+                        <td><img src={{var[3]['image']}}></td>
+                        <td>{{var[3]['fruit']}}</td>
                         <td>
                             <a href="/results.html" class="button">
-                                <button type="submit">Wybierz</button>
+                                <button id = "select-button3" name = {{var[3]['fruit']}}>Wybierz</button>
                             </a>
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="static/images/question_mark.png" alt="Apple-image"></td>
+                        <td><img src="static/images/question_mark.png"></td>
                         <td>Żadne z powyższych</td>
                         <td>
                             <a href="/camera.html" class="button">
-                                <button type="submit">Wybierz</button>
+                                <button id = "select-button4" name = "nieznajoma">Wybierz</button>
                             </a>
                         </td>
                     </tr>

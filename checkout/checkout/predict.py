@@ -23,6 +23,7 @@ def get_camera():
 
 @app.route("/", methods=["POST"])
 def predict():
+    global fruits
     try:
         image, imageName = get_image_from_request(request)
         # Zapisanie przesłanego pliku
@@ -44,9 +45,13 @@ def predict():
         raise error
         abort(500, str('Coś poszło nie tak po stronie serwera'))
 
-@app.route("/get_items")
+@app.route("/results")
 def get_items():
-    return render_template("list.html")
+    return render_template("list.html", var=fruits)
+
+#@app.route("/ranking")
+#def ranking():
+
 
 
 def init_models():
