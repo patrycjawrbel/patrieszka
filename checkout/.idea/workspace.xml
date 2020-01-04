@@ -4,9 +4,9 @@
     <list default="true" id="5cf1470f-8f58-4348-af3d-906107d88972" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkout.db" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout/static/js/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/static/js/list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/templates/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout/static/css/style_results.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/static/css/style_results.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout/static/js/camera.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/static/js/camera.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout/static/js/results.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/static/js/results.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkout/templates/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/templates/results.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

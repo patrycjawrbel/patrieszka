@@ -129,3 +129,23 @@ div.desc {
     display: table;
     clear: both;
 }
+
+#home {
+    background-color: #FFFFFF;
+    border: none;
+    width: 200px;
+    color: #4CAF50;
+    padding: 15px 15px;
+    margin-bottom: 20px;
+    margin-top: 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    float: right;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

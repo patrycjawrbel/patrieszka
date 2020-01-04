@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 predict_button.addEventListener("click", function () {
             $.ajax({
     url         : "/",
-    method      : "post", "get"
+    method      : "post",
     contentType : 'application/json',
     dataType    : 'html',
     data        : JSON.stringify({ "imageData": canvas.toDataURL('image/jpeg'), "name" : date })
