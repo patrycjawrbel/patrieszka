@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     url         : "/",
     method      : "get",
     dataType    : 'html',
-    success     :  function(data){
-       $('#content').html(data);
-};
-    })
+    /*success     :  function(data){
+       $('body').html(data);
+}*/
+    });
+})
 })

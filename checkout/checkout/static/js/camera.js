@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         context.drawImage(video, 0, 0, 300, 150);
         context.imageSmoothingEnabled = true;
         let html = `
-<button id="predict-button" type="submit" value="Rozpoznaj">Rozpoznaj</button>`;
+        <a class="link-title" href="/results"><button id="predict-button">Rozpoznaj</button></a>`;
         document.querySelector('#predict-button-div').innerHTML = html;
         const predict_button = document.getElementById('predict-button');
         let image = canvas.toDataURL('image/jpeg');

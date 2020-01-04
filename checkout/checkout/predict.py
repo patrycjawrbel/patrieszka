@@ -53,6 +53,7 @@ def get_items():
 def ranking():
     message = request.get_json(force=True)
     labelName = message.get('fruitName', None)
+    print(labelName)
     #tutaj zapis do bazy!!!
     return url_for("rank")
 
