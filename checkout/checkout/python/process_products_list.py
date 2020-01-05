@@ -6,7 +6,7 @@ fruits = [{"fruit": "Jablko", "prediction": 0, "image": "static/images/apple.png
           {"fruit": "Pomarańcza", "prediction": 0, "image": "static/images/orange.png"},
           {"fruit": "Gruszka", "prediction": 0, "image": "static/images/pear.png"},
           {"fruit": "Marchewka", "prediction": 0, "image": "static/images/carrot.png"},
-          {"fruit": "Ogórek", "prediction": 0, "image": "static/images/cucumber.png"},
+          {"fruit": "Ogorek", "prediction": 0, "image": "static/images/cucumber.png"},
           {"fruit": "Papryka", "prediction": 0, "image": "static/images/pepper.png"},
           {"fruit": "Ziemniak", "prediction": 0, "image": "static/images/potato.png"},
           {"fruit": "Pomidor", "prediction": 0, "image": "static/images/tomato.png"}

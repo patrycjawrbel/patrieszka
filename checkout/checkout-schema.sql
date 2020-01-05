@@ -24,7 +24,7 @@ create table if not exists predictions (
 drop table if exists labels;
 create table if not exists labels (
     id_pred integer,
-    id_class integer default 1,
+    id_class integer default 11,
     primary key(id_pred, id_class),
     foreign key(id_pred)
         references predictions(id_pred)

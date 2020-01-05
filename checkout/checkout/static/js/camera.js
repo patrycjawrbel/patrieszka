@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         context.drawImage(video, 0, 0, 300, 150);
         context.imageSmoothingEnabled = true;
         let html = `
-        <a class="link-title" href="/results"><button id="predict-button">Rozpoznaj</button></a>`;
+        <button id="predict-button">Rozpoznaj</button>`;
         document.querySelector('#predict-button-div').innerHTML = html;
         const predict_button = document.getElementById('predict-button');
         let image = canvas.toDataURL('image/jpeg');
@@ -44,6 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
     dataType    : 'html',
     data        : JSON.stringify({ "imageData": canvas.toDataURL('image/jpeg'), "name" : date })
 });
+        let html2 = `<a class="link-title" href="/results"><button id="next-button">Dalej</button></a>`;
+        document.querySelector('#next-button-div').innerHTML = html2;
         })
     })
 })
