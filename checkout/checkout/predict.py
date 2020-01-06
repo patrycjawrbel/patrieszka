@@ -91,10 +91,9 @@ def ranking():
     message = request.get_json(force=True)
     labelName = message.get('fruitName', None)
     print(labelName)
-    #tutaj zapis do bazy!!!
     id_label = select_class(conn, labelName)
     id_current_pred = select_last(conn)
-    #insert_label(conn,id_label,id_current_pred)
+    insert_label(conn,id_label,id_current_pred)
     return url_for("rank")
 
 @app.route("/ranking")

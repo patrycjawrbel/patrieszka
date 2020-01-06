@@ -3,17 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="5cf1470f-8f58-4348-af3d-906107d88972" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout-schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/checkout-schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout/database/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/database/connection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout/database/insert_pred.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/database/insert_pred.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout.db" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout/database/select_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/database/select_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout/database/select_last.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/database/select_last.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkout/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout/python/process_products_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/python/process_products_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout/static/css/camera.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/static/css/camera.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout/static/js/camera.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/static/js/camera.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout/templates/camera.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/templates/camera.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initial-data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/initial-data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selectquery.sql" beforeDir="false" afterPath="$PROJECT_DIR$/selectquery.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../page/b.html" beforeDir="false" afterPath="$PROJECT_DIR$/../page/b.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../page/camera.html" beforeDir="false" afterPath="$PROJECT_DIR$/../page/camera.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../page/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/../page/results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../page/styles/style_results.css" beforeDir="false" afterPath="$PROJECT_DIR$/../page/styles/style_results.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
