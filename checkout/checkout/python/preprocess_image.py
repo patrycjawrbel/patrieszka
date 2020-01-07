@@ -15,8 +15,7 @@ def preprocess_image(image, target_size):
     return image
 
 
-def get_heatmap(path, model_vgg):
-    file_path = 'C:/Users/patry/Desktop/patrieszka/checkout/checkout/static/images/' + 'heatmap.jpg'
+def get_heatmap(path, model_vgg, current_path):
     img = keras.preprocessing.image.load_img(path, target_size=(224, 224))
     x = keras.preprocessing.image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
@@ -46,6 +45,6 @@ def get_heatmap(path, model_vgg):
 
     cm = plt.get_cmap('viridis')
     img = Image.fromarray(((superimposed_img)[:, :, :3] * 255).astype(np.uint8))
-    heatmap_path = file_path
-    img.save(heatmap_path)
+    heatmap_path = current_path + '\\checkout\\static\\images\\heatmap.jpg'
+    img.save(current_path + '\\checkout\\static\\images\\heatmap.jpg')
     return heatmap_path

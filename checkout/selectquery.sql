@@ -1,2 +1,2 @@
-select * from labels
+select * from predictions
 ;

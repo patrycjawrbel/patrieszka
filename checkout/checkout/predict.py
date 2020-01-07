@@ -16,7 +16,7 @@ from checkout.database.select_class import select_class
 from checkout.database.select_last import select_last
 from checkout.database.insert_label import insert_label
 
-current_path = os.path.dirname(os.path.abspath(__file__))
+current_path = os.getcwd()
 
 
 class BadRequestException(Exception):
@@ -61,9 +61,13 @@ def init_models():
 
     # Utworzenie folderu na przychodzace zdjecia jesli nie istnieje
     global paths_to_photos
-    paths_to_photos = argument.paths_to_photos
-    if not os.path.exists(paths_to_photos):
+    paths_to_photos = current_path + '\\images'
+    try:
         os.mkdir(paths_to_photos)
+    except OSError:
+        print("Creation of the directory %s failed" % paths_to_photos)
+    else:
+        print("Successfully created the directory %s " % paths_to_photos)
     return host, port
 
 
@@ -78,8 +82,9 @@ def predict():
     try:
         image, imageName = get_image_from_request(request)
         # Zapisanie przesłanego pliku
-        path = 'C:/Users/patry/Desktop/patrieszka/checkout/images/' + imageName
-        image.save(path)
+        path = paths_to_photos + '\\' + imageName
+        #print( "Current dir: " % path)
+        image.save(paths_to_photos + '\\' + imageName)
         processed_image = preprocess_image(image, target_size=(224, 224))
         prediction = None
         with graph.as_default():
@@ -88,7 +93,7 @@ def predict():
             prediction = model.predict(bt_prediction).tolist()
             insert_pred(conn, prediction, path)
             fruits = process_products_list(prediction)
-            heatmap_image_path = get_heatmap(path, model_vgg)
+            heatmap_image_path = get_heatmap(path, model_vgg, current_path)
         return redirect(url_for('get_items'))
     except BadRequestException as error:
         abort(400, str(error))
