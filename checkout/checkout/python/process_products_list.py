@@ -11,7 +11,7 @@ fruits = [{"fruit": "Jablko", "prediction": 0, "image": "static/images/apple.png
           {"fruit": "Ziemniak", "prediction": 0, "image": "static/images/potato.png"},
           {"fruit": "Pomidor", "prediction": 0, "image": "static/images/tomato.png"}
 ]
-
+#funkcja zaokrąglająca i sortująca wyniki predykcji
 def process_products_list(products):
     for i in range(len(fruits)):
         fruits[i]["prediction"] = round(products[0][i]*100,2)

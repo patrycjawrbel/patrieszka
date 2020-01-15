@@ -25,19 +25,13 @@ class BadRequestException(Exception):
 
 app = Flask(__name__)
 
-
+# funkcja odpowiadająca za odczytanie argumentów z linii poleceń, załadowanie modeli oraz połączenie z bazą danych
 def init_models():
     # załadowanie argumentów wiesza poleceń
     parser = argparse.ArgumentParser(description="")
     parser.add_argument("-host", '--host', help="Host aplikacji - domyślny to 'localhost'", required=False,
                         default='localhost')
     parser.add_argument("-port", '--port', help="Port for web app", required=False, default=5000)
-    parser.add_argument("-paths_to_models", '--paths_to_models',
-                        help="Ścieżka do plików modeli - domyślna to '../models'", required=False,
-                        default=current_path + "\\..\\models")
-    parser.add_argument("-paths_to_photos", '--paths_to_photos',
-                        help="Scieżka gdzie mają być zapisywane przesyłane zdjęcia - domyślna to '../received_images'",
-                        required=False, default=current_path + '\\..\\' + 'received_images')
     argument = parser.parse_args()
 
     global host, port, weights, conn
@@ -47,7 +41,6 @@ def init_models():
     global model, graph, vgg16, session, model_vgg
     session = tf.Session()
     set_session(session)
-    # models_path = argument.paths_to_models
     model = tf.keras.models.load_model('models/fc_model1.h5')
     model_vgg = VGG16('models/fc_model1.h5')
     weights = model.load_weights('models/model_grocery.h5')
@@ -55,7 +48,7 @@ def init_models():
     graph = tf.get_default_graph()
     print("**MODEL LOADED")
 
-    # connection with database
+    # połączenie z bazą danych
     conn = connect_database()
     print("**DATABASE CONNECTED**")
 
@@ -70,12 +63,12 @@ def init_models():
         print("Successfully created the directory %s " % paths_to_photos)
     return host, port
 
-
+# endpoint zwracający html z widokiem z kamery
 @app.route('/', methods=["GET"])
 def get_camera():
     return render_template("camera.html")
 
-
+# endpoint przyjmujący zdjęcie od klienta oraz wykonujący predykcje
 @app.route("/", methods=["POST"])
 def predict():
     global fruits
@@ -101,24 +94,24 @@ def predict():
         raise error
         abort(500, str('Coś poszło nie tak po stronie serwera'))
 
-
+# endpoint zwracający html z czterema najbardziej prawdopodobnymi wynikami
 @app.route("/results")
 def get_items():
     return render_template("list.html", var=fruits)
 
-
+# endpoint przyjmujący etykietę od klienta i dokonujący zapisu do bazy
 @app.route("/saveLabel", methods=['POST'])
 def ranking():
     message = request.get_json(force=True)
     labelName = message.get('fruitName', None)
     print(labelName)
-    # tutaj zapis do bazy!!!
+    #zapis do bazy
     id_label = select_class(conn, labelName)
     id_current_pred = select_last(conn)
     insert_label(conn, id_label, id_current_pred)
     return url_for("rank")
 
-
+# endpoint zwracający html z końcowymi statystykami
 @app.route("/ranking")
 def rank():
     return render_template("results.html", fruits=fruits)

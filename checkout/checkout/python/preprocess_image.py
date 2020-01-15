@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image
 from keras.applications.vgg16 import preprocess_input
 
-
+#funkcja dokonująca wstępnego przetworzenia zdjęcia
 def preprocess_image(image, target_size):
     image = image.resize(target_size)
     image = keras.preprocessing.image.img_to_array(image)
@@ -14,7 +14,7 @@ def preprocess_image(image, target_size):
     image /= 255.
     return image
 
-
+#funkcja tworząca mapę ciepła
 def get_heatmap(path, model_vgg, current_path):
     img = keras.preprocessing.image.load_img(path, target_size=(224, 224))
     x = keras.preprocessing.image.img_to_array(img)

@@ -1,6 +1,6 @@
 import sqlite3
 
-
+#funkcja zapisująca sciezke do zdjecia oraz wartosci predykcji w tabeli predictions
 def insert_pred(conn, pred_list, path):
     fruits = [0,0,0,0,0,0,0,0,0,0]
     for i in range(10):

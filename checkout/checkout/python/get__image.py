@@ -6,7 +6,7 @@ from checkout.python.string_process import string_process
 
 class BadRequestException(Exception):
     pass
-
+# funckja odczytująca zdjęcie z formatu JSON. Funkcja wycina niepotrzebne informacje wysyłane przez przeglądarkę
 def get_image_from_request(request):
     message = request.get_json(force=True)
     imageName = message.get('name', None)
